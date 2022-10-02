@@ -1,0 +1,30 @@
+link#bootstrap-css(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css' rel='stylesheet')
+script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
+script(src='//code.jquery.com/jquery-1.11.1.min.js')
+  // ---- Include the above in your HEAD tag --------
+form.form-horizontal(action='/register' method='POST')
+  fieldset
+    #legend
+      legend Register
+    .control-group
+      // Username
+      label.control-label(for='username') Username
+      .controls
+        input#username.input-xlarge(type='text' name='username' placeholder='')
+        p.help-block Username can contain any letters or numbers, without spaces
+    .control-group
+      // Password
+      label.control-label(for='password') Password
+      .controls
+        input#password.input-xlarge(type='password' name='password' placeholder='')
+        p.help-block Password should be at least 4 characters
+    .control-group
+      // Confirm Password
+      label.control-label(for='password_confirm') Password (Confirm)
+      .controls
+        input#password_confirm.input-xlarge(type='password' name='password_confirm' placeholder='')
+        p.help-block Please confirm password
+    .control-group
+      // Submit Button
+      .controls
+        button.btn.btn-success(type='submit') Register

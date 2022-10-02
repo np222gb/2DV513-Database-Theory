@@ -1,0 +1,40 @@
+link#bootstrap-css(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css' rel='stylesheet')
+script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
+script(src='//code.jquery.com/jquery-1.11.1.min.js')
+  // ---- Include the above in your HEAD tag --------
+form.form-horizontal(action='/createevent' method='POST')
+  fieldset
+    #legend
+      legend Create Event
+    .control-group
+      // Event Name
+      label.control-label(for='eventname') Event Name
+      .controls
+        input#eventname.input-xlarge(type='text' name='eventname' placeholder='')
+    .control-group
+      // Date 
+      label.control-label(for='date') Event Date
+      .controls
+        input#date.input-xlarge(type='date' name='date' placeholder='')
+    .control-group
+      // Audience
+      label.control-label(for='audience') Audience
+      .controls
+        select#audience(name='audience')
+          option(value='anyone') Anyone
+          option(value='students') Students
+          option(value='formal') Formal
+          option(value='family') Family only
+    .control-group
+      // Location
+      label.control-label(for='location') Location
+      .controls
+        select#location(name='location')
+          option(value='vaxjo') Vaxjo
+          option(value='goteburg') Goteburg
+          option(value='stockholm') Stockholm
+          option(value='karlskrona') Karlskrona
+    .control-group
+      // Submit Button
+      .controls
+        button.btn.btn-success(type='submit') Create Event

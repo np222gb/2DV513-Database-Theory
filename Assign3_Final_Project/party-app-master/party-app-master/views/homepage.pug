@@ -1,0 +1,29 @@
+link#bootstrap-css(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css' rel='stylesheet')
+script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
+script(src='//code.jquery.com/jquery-1.11.1.min.js')
+// ---- Include the above in your HEAD tag --------
+#legend
+      legend Events List
+.well
+ table.table
+  thead
+   tr
+    th #
+    th Event Name
+    th Event Date
+    th Event Location
+    th Audience
+    th Attendees
+    th Status
+  each result in results
+    tbody
+      tr
+        td= result['id']
+        td= result['event_name']
+        td= result['event_date']
+        td= result['event_location']
+        td= result['audience']
+        td= result['attendees'] 
+        td
+          form(action='/' method='POST') 
+           button.btn.btn-success(type='submit' value=result['id'] id='goingButton' name='goingButton') Going?
